@@ -98,7 +98,7 @@ rclcpp::shutdown();
 }
 
 bool TraversabilityEstimation::readParameters() {
-  nodeHandle_->declare_parameter("use_raw_map", true);
+  nodeHandle_->declare_parameter("use_raw_map", false);
   useRawMap_ = nodeHandle_->get_parameter("use_raw_map").as_bool();
   nodeHandle_->declare_parameter("submap_service", "/get_raw_submap");
   submapServiceName_ = nodeHandle_->get_parameter("submap_service").as_string();
@@ -236,8 +236,8 @@ bool TraversabilityEstimation::updateServiceCallback(const std::shared_ptr<grid_
     rclcpp::sleep_for(std::chrono::seconds(1));
   }
   grid_map::GridMap traversabilityMap = traversabilityMap_.getTraversabilityMap();
-  // response->header.frame_id = traversabilityMap_.getMapFrameId();
-  // response->header.stamp = nodeHandle_->now();
+  //response->info.header.frame_id = traversabilityMap_.getMapFrameId();
+  //response->info.header.stamp = nodeHandle_->now();
   response->info.resolution = traversabilityMap.getResolution();
   response->info.length_x = traversabilityMap.getLength()[0];
   response->info.length_y = traversabilityMap.getLength()[1];
