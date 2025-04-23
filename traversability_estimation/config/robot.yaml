@@ -2,7 +2,7 @@ traversability_estimation:
   ros__parameters:
     submap_service: "/get_submap" #"/elevation_mapping_long_range/get_submap"
     use_raw_map: false
-    map_frame_id: "base_link"  # Must be the same as the input elevation submap.
+    map_frame_id: "base_link"  # Must be the same as the input elevation submap. (working: base_link)
     robot_frame_id: "base_link"
     min_update_rate: 5.0 #0.2
     map_center_x: 0.0
