@@ -15,13 +15,13 @@ traversability_estimation:
         type: traversabilityFilters/SlopeFilter
         params:
           map_type: traversability_slope
-          critical_value: 0.75
+          critical_value: 0.5
       filter3:
         name: step_filter
         type: traversabilityFilters/StepFilter
         params:
           map_type: traversability_step
-          critical_value: 0.12
+          critical_value: 0.5
           first_window_radius: 0.5
           second_window_radius: 0.6
           critical_cell_number: 1
