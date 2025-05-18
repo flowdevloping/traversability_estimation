@@ -167,8 +167,8 @@ bool TraversabilityMap::setElevationMap(const grid_map_msgs::msg::GridMap& msg) 
   }
   elevationMap_ = elevationMap;
   elevationMapInitialized_ = true;
-  RCLCPP_INFO(nodeHandle_->get_logger(), "Received elevation map frame_id: '%s' :", msg.header.frame_id.c_str());
-  RCLCPP_INFO(nodeHandle_->get_logger(), "Succesfully updated traversability map");
+  //RCLCPP_INFO(nodeHandle_->get_logger(), "Received elevation map frame_id: '%s' :", msg.header.frame_id.c_str());
+  //RCLCPP_INFO(nodeHandle_->get_logger(), "Succesfully updated traversability map");
   return true;
 }
 
