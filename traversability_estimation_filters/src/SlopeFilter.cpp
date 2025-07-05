@@ -4,7 +4,12 @@
  *  Created on: Mar 11, 2015
  *      Author: Martin Wermelinger
  *   Institute: ETH Zurich, Autonomous Systems Lab
- */
+*/
+
+/*
+  Calculates traversability value between 0 and 1.
+  The higher the value, the higher the likelihood of traversability for that area.
+*/
 
 #include "filters/SlopeFilter.hpp"
 #include <pluginlib/class_list_macros.hpp>
@@ -70,7 +75,7 @@ bool SlopeFilter<T>::update(const T& mapIn, T& mapOut)
     // Check if there is a surface normal (empty cell).
     if (!mapOut.isValid(*iterator, "surface_normal_z")) continue;
 
-    // Compute slope from surface normal z
+    // Compute slope [angle] from surface normal z 
     slope = acos(mapOut.at("surface_normal_z", *iterator));
 
     if (slope < criticalValue_) {
